@@ -14,14 +14,14 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- Estilos propios -->
-    <link rel="stylesheet" href="///css/estilos.css">
+    <link rel="stylesheet" href="/css/estilos.css">
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="///index.php">Librería Jose Manuel</a>
+            <a class="navbar-brand" href="/index.php">Librería Jose Manuel</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,23 +29,23 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link <?php echo ($pagina == 'index') ? 'active' : ''; ?>"
-                            href="///index.php">Inicio</a>
+                            href="/index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?php echo ($pagina == 'libros') ? 'active' : ''; ?>"
-                            href="///pages/libros.php">Libros</a>
+                            href="/pages/libros.php">Libros</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?php echo ($pagina == 'autores') ? 'active' : ''; ?>"
-                            href="///pages/autores.php">Autores</a>
+                            href="/pages/autores.php">Autores</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?php echo ($pagina == 'contacto') ? 'active' : ''; ?>"
-                            href="///pages/contacto.php">Contacto</a>
+                            href="/pages/contacto.php">Contacto</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?php echo ($pagina == 'mensajes') ? 'active' : ''; ?>"
-                            href="///pages/mensajes.php">
+                            href="/pages/mensajes.php">
                             Mensajes
                         </a>
                     </li>

@@ -21,7 +21,7 @@ jobs:
 
       - name: Build & Run (Docker Compose)
         run: |
-          docker compose up -d --build
+          docker compose up -d web
 
       - name: Wait for health endpoint
         run: |

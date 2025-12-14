@@ -11,7 +11,7 @@ include __DIR__ . '/includes/header.php';
             <p class="col-md-8 fs-5">
                 Aquí podrás consultar el listado de libros disponibles, ver los autores y ponerte en contacto con nosotros.
             </p>
-            <a href="///pages/libros.php" class="btn btn-primary btn-lg">
+            <a href="/pages/libros.php" class="btn btn-primary btn-lg">
                 Ver libros
             </a>
         </div>
