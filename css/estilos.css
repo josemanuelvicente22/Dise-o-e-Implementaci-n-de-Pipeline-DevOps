@@ -1,0 +1,57 @@
+/* ====== Estilos generales ====== */
+
+body {
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1100px;
+}
+
+/* Títulos principales */
+h1, h2 {
+    font-weight: 600;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-weight: 600;
+    letter-spacing: 0.03rem;
+}
+
+/* ====== Tablas bonitas ====== */
+
+.table-custom {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.table-custom thead tr {
+    background: #212529;
+    color: #fff;
+}
+
+.table-custom tbody tr:nth-child(even) {
+    background-color: #f1f3f5;
+}
+
+.table-custom tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Badge de cantidad */
+.badge-count {
+    font-size: 0.85rem;
+}
+
+/* Filtros de libros */
+.filtros-libros .form-control,
+.filtros-libros .form-select {
+    border-radius: 999px;
+}
+
+.filtros-libros .btn {
+    border-radius: 999px;
+}
+

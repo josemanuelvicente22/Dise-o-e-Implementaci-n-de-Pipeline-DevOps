@@ -1,0 +1,58 @@
+name: CI-CD
+
+on:
+  pull_request:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: PHP Syntax Check (lint)
+        run: |
+          set -e
+          # -l valida sintaxis; no ejecuta el código
+          find . -name "*.php" -print0 | xargs -0 -n1 php -l
+
+      - name: Build & Run (Docker Compose)
+        run: |
+          docker compose up -d --build
+
+      - name: Wait for health endpoint
+        run: |
+          set -e
+          for i in {1..40}; do
+            if curl -fsS http://localhost:8080/health.php >/dev/null; then
+              echo "health OK"; exit 0
+            fi
+            echo "waiting..."; sleep 3
+          done
+          echo "health never became ready"; docker compose logs; exit 1
+
+      - name: Smoke test (DB + pages)
+        run: |
+          set -e
+          curl -fsS http://localhost:8080/health.php | tee health.json
+          # opcional: comprobar que carga la home
+          curl -fsS http://localhost:8080/index.php >/dev/null
+
+      - name: Teardown
+        if: always()
+        run: docker compose down -v
+
+  cd:
+    needs: ci
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy (explicación)
+        run: |
+          echo "Para el deploy real, elige una opción:" 
+          echo "1) Render/Railway: usar deploy hook o conectar repo" 
+          echo "2) VPS: SSH + docker compose pull/up" 
+          echo "En la práctica, con CI funcionando, ya cumples el núcleo de CI/CD."
